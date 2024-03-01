@@ -82,147 +82,147 @@ $cartItems = $_SESSION['cart'];
 </head>
 <body>
 
-<!--Navbar-->
+  <!--Navbar-->
 
-<nav class="navbar navbar-expand-lg bg-white sticky-top shadow p-3 mb-5">
-  <div class="container-sm">
-    <img src="img/Logo.jpg">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link " aria-current="page" href="index.php">Menu</a>
-        <a class="nav-link" href="products.php">Order</a>
-       <a href="cart.php" class="nav-link active" >Cart</a>
+  <nav class="navbar navbar-expand-lg bg-white sticky-top shadow p-3 mb-5">
+    <div class="container-sm">
+      <img src="img/Logo.jpg">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link " aria-current="page" href="index.php">Menu</a>
+          <a class="nav-link" href="products.php">Order</a>
+        <a href="cart.php" class="nav-link active" >Cart</a>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!--Main Content-->
-<!--Cart Content Container-->
-<div id="cartContentContainer" class="container my-5">
-    <h2>Your Shopping Cart</h2>
-    <table id="cartTable" class="table">
-        <thead>
-        <tr>
-            <th scope="col">Order No.</th>
-            <th scope="col">Product Name</th>
-            <th scope="col">Customer Name</th>
-            <th scope="col">Size</th>
-            <th scope="col">Temperature</th>
-            <th scope="col">Price</th>
-            <th scope="col">Actions</th> <!-- Added Actions column -->
-        </tr>
-        </thead>
-        <tbody>
-        <!-- Cart content will be dynamically inserted here -->
-        </tbody>
-    </table>
+  <!--Main Content-->
+  <!--Cart Content Container-->
+  <div id="cartContentContainer" class="container my-5">
+      <h2>Your Shopping Cart</h2>
+      <table id="cartTable" class="table">
+          <thead>
+          <tr>
+              <th scope="col">Order No.</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Customer Name</th>
+              <th scope="col">Size</th>
+              <th scope="col">Temperature</th>
+              <th scope="col">Price</th>
+              <th scope="col">Actions</th> <!-- Added Actions column -->
+          </tr>
+          </thead>
+          <tbody>
+          <!-- Cart content will be dynamically inserted here -->
+          </tbody>
+      </table>
 
-    <!-- Total amount and order button section -->
-    <div class="row">
-        <div class="col-md-6">
-            <h4>Total Amount: <span id="totalAmount">₱0.00</span></h4>
-        </div>
-        <div class="col-md-6 text-end">
-            <button class="btn btn-primary" onclick="placeOrder()">Place Order</button>
-        </div>
-    </div>
-</div>
-
-
-
-
-<!--Footer-->
-
-<div class="container my-5">
-
-    <footer class="text-white text-center text-lg-start bg-primary">
-    <!-- Grid container -->
-    <div class="container p-4">
-      <!--Grid row-->
-      <div class="row mt-4">
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">About Barista</h5>
-  
-          <p>
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-            voluptatum deleniti atque corrupti.
-          </p>
-  
-          <p>
-            Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
-            molestias.
-          </p>
-  
-          <div class="mt-4">
-            <!-- Facebook -->
-            <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-facebook-f"></i></a>
-            <!-- Instagram -->
-            <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-instagram"></i></a>
-            <!-- Twitter -->
-            <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-twitter"></i></a>
+      <!-- Total amount and order button section -->
+      <div class="row">
+          <div class="col-md-6">
+              <h4>Total Amount: <span id="totalAmount">₱0.00</span></h4>
           </div>
-        </div>
-        <!--Grid column-->
-  
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          
-  
-          <ul class="fa-ul" style="margin-left: 1.65em;">
-            <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">New York, NY 10012, US</span>
-            </li>
-            <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@example.com</span>
-            </li>
-            <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 01 234 567 88</span>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
-  
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">Opening hours</h5>
-  
-          <table class="table text-center text-white">
-            <tbody class="font-weight-normal">
-              <tr>
-                <td>Mon - Thu:</td>
-                <td>8am - 9pm</td>
-              </tr>
-              <tr>
-                <td>Fri - Sat:</td>
-                <td>8am - 1am</td>
-              </tr>
-              <tr>
-                <td>Sunday:</td>
-                <td>9am - 10pm</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <!--Grid column-->
+          <div class="col-md-6 text-end">
+              <button class="btn btn-primary" onclick="placeOrder()">Place Order</button>
+          </div>
       </div>
-      <!--Grid row-->
-    </div>
-    <!-- Grid container -->
-  
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2021 Copyright: DL
-    </div>
-    <!-- Copyright -->
-  </footer>
-  
-</div>
-<!-- End of .container -->
+  </div>
+
+
+
+
+  <!--Footer-->
+
+  <div class="container my-5">
+
+      <footer class="text-white text-center text-lg-start bg-primary">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row mt-4">
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">About Barista</h5>
+    
+            <p>
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+              voluptatum deleniti atque corrupti.
+            </p>
+    
+            <p>
+              Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+              molestias.
+            </p>
+    
+            <div class="mt-4">
+              <!-- Facebook -->
+              <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-facebook-f"></i></a>
+              <!-- Instagram -->
+              <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-instagram"></i></a>
+              <!-- Twitter -->
+              <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <!--Grid column-->
+    
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            
+    
+            <ul class="fa-ul" style="margin-left: 1.65em;">
+              <li class="mb-3">
+                <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">New York, NY 10012, US</span>
+              </li>
+              <li class="mb-3">
+                <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@example.com</span>
+              </li>
+              <li class="mb-3">
+                <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 01 234 567 88</span>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+    
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">Opening hours</h5>
+    
+            <table class="table text-center text-white">
+              <tbody class="font-weight-normal">
+                <tr>
+                  <td>Mon - Thu:</td>
+                  <td>8am - 9pm</td>
+                </tr>
+                <tr>
+                  <td>Fri - Sat:</td>
+                  <td>8am - 1am</td>
+                </tr>
+                <tr>
+                  <td>Sunday:</td>
+                  <td>9am - 10pm</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+    
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2024 Copyright: DL
+      </div>
+      <!-- Copyright -->
+    </footer>
+    
+  </div>
+  <!-- End of .container -->
 
 
 

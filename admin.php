@@ -118,7 +118,7 @@
                     </tr>
                 </thead>
                 <?php
-                
+
                     $query = "SELECT * FROM orders ";
                     $result = mysqli_query($conn, $query);
                 
@@ -229,7 +229,7 @@
 
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2024 Copyright: Mhariz, Geraldine, Thesly, Mia
+        © 2024 Copyright: DL
         </div>
         <!-- Copyright -->
     </footer>
@@ -244,45 +244,45 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script>
 
-$(document).ready(function() {
-    $('#cartTable').on('click', '.cancel-btn', function() {
-        var row = $(this).closest('tr');
-        var orderId = $(this).data('order-id');
+    $(document).ready(function() {
+        $('#cartTable').on('click', '.cancel-btn', function() {
+            var row = $(this).closest('tr');
+            var orderId = $(this).data('order-id');
 
-        // Now you can use the orderId as needed
-        console.log('Order ID:', orderId);
+            // Now you can use the orderId as needed
+            console.log('Order ID:', orderId);
 
-        $.ajax({
-            type: 'POST',
-            url: 'your_php_script.php', 
-            data: {
-                orderId: orderId,
-                action: 'markOrderAsDone',
-                csrf_token: '<?php echo csrf_token(); ?>'
-            },
-            dataType: 'json',
-            success: function(response) {
-                if (response.status === 'success') {
-                    alertify.success('Order marked as done!');
-                    row.hide();
-                    updateTotalOrdersCount();
-                } else {
-                    alertify.error('Failed to update order status.');
+            $.ajax({
+                type: 'POST',
+                url: 'your_php_script.php', 
+                data: {
+                    orderId: orderId,
+                    action: 'markOrderAsDone',
+                    csrf_token: '<?php //echo csrf_token(); ?>'
+                },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status === 'success') {
+                        alertify.success('Order marked as done!');
+                        row.hide();
+                        updateTotalOrdersCount();
+                    } else {
+                        alertify.error('Failed to update order status.');
+                    }
+                },
+                error: function() {
+                    alertify.error('An error occurred while updating the order status.');
                 }
-            },
-            error: function() {
-                alertify.error('An error occurred while updating the order status.');
-            }
+            });
         });
     });
-});
 
-function updateTotalOrdersCount() {
-    var totalOrders = parseInt($('#totalOrders').text());
-    $('#totalOrders').text(totalOrders - 1);
-}
-alertify.set('notifier', 'position', 'top-right');
-alertify.set('notifier', 'delay', 5);
+    function updateTotalOrdersCount() {
+        var totalOrders = parseInt($('#totalOrders').text());
+        $('#totalOrders').text(totalOrders - 1);
+    }
+    alertify.set('notifier', 'position', 'top-right');
+    alertify.set('notifier', 'delay', 5);
 
 </script>
 </body>
