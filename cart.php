@@ -9,9 +9,6 @@ if (!isset($_SESSION['cart'])) {
 $cartItems = $_SESSION['cart'];
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -282,7 +279,7 @@ $cartItems = $_SESSION['cart'];
         });
     }
 
-    // Function to calculate and display the total amount as an integer
+    // Function to calculate and display the total amount as an float lols
     function calculateTotalAmount() {
         var totalAmount = 0;
 
@@ -345,8 +342,7 @@ $cartItems = $_SESSION['cart'];
 
     // Function to clear the cart
     function clearCart() {
-        // ... your existing code for clearing the cart ...
-        refreshCart(); // Refresh the cart display after clearing
+        refreshCart(); 
     }
 
 

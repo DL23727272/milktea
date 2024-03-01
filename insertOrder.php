@@ -6,10 +6,10 @@ if (isset($_SESSION['cart'])) {
     $cartItems = $_SESSION['cart'];
 
     // Insert orders into the database
-    $servername = "localhost"; // Replace with your MySQL server name
-    $username = "root"; // Replace with your MySQL username
-    $password = ""; // Replace with your MySQL password
-    $dbname = "milktea"; // Replace with your database name
+    $servername = "localhost"; 
+    $username = "root"; 
+    $password = ""; 
+    $dbname = "milktea"; 
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
