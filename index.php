@@ -17,31 +17,26 @@
             width: 70px;
             border-radius: 50px;
         }
-
         .img{
             width: 500px;
             height: 400px;
         }
-
         body{
             overflow-x: hidden;
             overflow-y: auto;
             margin: 0;
             padding: 0;
         }
-
         #slider {
             width: 100%; 
             height: 400px; 
             display: flex;
             overflow: hidden;
         }
-
         .slide {
             min-width: 100%;
             transition: transform 1.1s ease-in-out; 
         }
-
         .slide img {
             width: 600px;
             height: 400px;
@@ -52,7 +47,22 @@
         .text-center {
             text-align: center;
         }
-      
+        .thumb {
+          display: flex;
+          margin-top: -60px;
+          justify-content: center;
+        }
+        .thumb a:hover {
+          margin-top: -15px;
+          transition: 0.2s;
+        }
+        .thumb img {
+          width: 54px;
+          margin: 20px;
+        }
+        .container .right-side img {
+          max-width: 50%;
+        }
     </style>
   
 
@@ -84,6 +94,43 @@
       <p>Barista</p>
   </div>
 
+  <div class="container mt-5 my-5">
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+      <img src="img/img1.png" alt="" class="starbucks" style=" width: 300px; height: 400px; filter: drop-shadow(11px 13px 9px #000000); -webkit-filter: drop-shadow(11px 13px 9px #000000); -moz-filter: drop-shadow(11px 13px 9px #000000);"/>
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+
+      <div class="col-md-4">
+        <div class="thumb">
+          <a href="#bottom">
+            <img id="bottom" src="img/thumb1.png" onmouseover="imgSlider('img/img1.png');"/>
+          </a>
+          <a href="#bottom">
+            <img src="img/thumb2.png" onmouseover="imgSlider('img/img2.png');"/>
+          </a>
+          <a href="#bottom">
+            <img src="img/thumb3.png" onmouseover="imgSlider('img/img3.png');" />
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+      </div>
+    </div>
+  </div>
 
   <div class="container mt-5">
     <div class="row">
@@ -98,6 +145,8 @@
       </div>
     </div>
   </div>
+
+
 
 
   <!--Footer-->
@@ -191,9 +240,6 @@
 
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script>
-   
-</script>
+<script src="js/script.js"></script>
 </body>
 </html>
