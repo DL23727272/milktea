@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>Order | Barista</title>
+    <link rel="icon" type="image/jpeg" href="/img/Logo.jpg">
      <!-- Alertify sakit sa ulo -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
@@ -335,72 +336,72 @@
 
 <!-- Script block to include addToCart function -->
 <script>
-function addToCart(productName, name, size, temperature) {
-    // Use AJAX to call addToCart.php
-    $.ajax({
-        type: 'POST',
-        url: 'addToCart.php',
-        data: {
-            productName: productName,
-            name: $('#' + name).val(),
-            size: $('#' + size).val(),
-            temperature: $('#' + temperature).val(),
-        },
-        dataType: 'json',
-        success: function(response) {
-            if (response.status === 'success') {
-               
-                $('#' + name).val('');
-                $('#' + size).val('venti'); 
-                $('#' + temperature).val('iced'); 
+  function addToCart(productName, name, size, temperature) {
+      // Use AJAX to call addToCart.php
+      $.ajax({
+          type: 'POST',
+          url: 'addToCart.php',
+          data: {
+              productName: productName,
+              name: $('#' + name).val(),
+              size: $('#' + size).val(),
+              temperature: $('#' + temperature).val(),
+          },
+          dataType: 'json',
+          success: function(response) {
+              if (response.status === 'success') {
+                
+                  $('#' + name).val('');
+                  $('#' + size).val('venti'); 
+                  $('#' + temperature).val('iced'); 
 
-               
-                $('#coffee1').modal('hide');
-                $('#coffee2').modal('hide');
-                $('#coffee3').modal('hide');
-                $('#coffee4').modal('hide');
-                $('#coffee5').modal('hide');
-                $('#coffee6').modal('hide');
+                
+                  $('#coffee1').modal('hide');
+                  $('#coffee2').modal('hide');
+                  $('#coffee3').modal('hide');
+                  $('#coffee4').modal('hide');
+                  $('#coffee5').modal('hide');
+                  $('#coffee6').modal('hide');
 
-               
-                refreshCart();
-                alertify.success('Item added to cart!');
-            } else {
-                alertify.error('Failed to add item to cart.');
-            }
-        },
-        error: function() {
-            alertify.error('An error occurred while adding the item to the cart.');
-        }
+                
+                  refreshCart();
+                  alertify.success('Item added to cart!');
+              } else {
+                  alertify.error('Failed to add item to cart.');
+              }
+          },
+          error: function() {
+              alertify.error('An error occurred while adding the item to the cart.');
+          }
+      });
+  }
+
+
+  function refreshCart() {
+    
+      $.ajax({
+          type: 'GET',
+          url: 'getCartContent.php',
+          dataType: 'html',
+          success: function(cartContent) {
+            
+              $('#cartTable tbody').html(cartContent);
+          },
+          error: function() {
+              console.error('An error occurred while refreshing the cart.');
+          }
+      });
+  }
+
+  // Call refreshCart function when the page loads
+  $(document).ready(function() {
+    
+      alertify.set('notifier', 'position', 'top-right');
+      alertify.set('notifier', 'delay', 5);
+      alertify.set('notifier', 'position', 'top-right');
+
+      refreshCart();
     });
-}
-
-
-function refreshCart() {
-   
-    $.ajax({
-        type: 'GET',
-        url: 'getCartContent.php',
-        dataType: 'html',
-        success: function(cartContent) {
-          
-            $('#cartTable tbody').html(cartContent);
-        },
-        error: function() {
-            console.error('An error occurred while refreshing the cart.');
-        }
-    });
-}
-
-// Call refreshCart function when the page loads
-$(document).ready(function() {
-   
-    alertify.set('notifier', 'position', 'top-right');
-    alertify.set('notifier', 'delay', 5);
-    alertify.set('notifier', 'position', 'top-right');
-
-    refreshCart();
-  });
 </script>
 
 

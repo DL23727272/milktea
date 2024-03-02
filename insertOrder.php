@@ -27,7 +27,8 @@ if (isset($_SESSION['cart'])) {
         $temperature = $cartItem['temperature'];
         $price = $cartItem['price'];
 
-        $sql = "INSERT INTO orders (product_name, customer_name, size, temperature, price, order_date) VALUES ('$productName', '$customerName', '$size', '$temperature', $price, '$orderDate')";
+        $sql = "INSERT INTO orders (product_name, customer_name, size, temperature, price, order_date) 
+                VALUES ('$productName', '$customerName', '$size', '$temperature', $price, '$orderDate')";
 
         if ($conn->query($sql) !== TRUE) {
             echo json_encode(['status' => 'error']);
