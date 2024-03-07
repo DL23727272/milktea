@@ -64,6 +64,12 @@
         .container .right-side img {
           max-width: 50%;
         }
+        @media screen and (max-width: 600px) {
+          .starbucks{
+            padding: 0 0 0 13% ;
+          }
+          
+        }
     </style>
   
 
@@ -71,7 +77,7 @@
 <body>
 
   <!--Navbar-->
-
+<!-- div.$num*3 -->
   <nav class="navbar navbar-expand-lg bg-white sticky-top shadow p-3 mb-5">
     <div class="container-sm">
       <img src="img/Logo.jpg">
@@ -95,12 +101,12 @@
       <p>Barista</p>
   </div>
 
-  <div class="container mt-5 my-5">
+  <div class="container-sm mt-5 my-5">
     <div class="row">
       <div class="col-md-4">
       </div>
-      <div class="col-md-4">
-      <img src="img/img1.png" alt="" class="starbucks" style="width: 300px; height: 400px; filter: drop-shadow(11px 13px 9px #000000); -webkit-filter: drop-shadow(11px 13px 9px #000000); -moz-filter: drop-shadow(11px 13px 9px #000000);"/>
+      <div class="col-sm-12 col-md-4"  >
+      <img src="img/img1.png" alt="" class="starbucks img-fluid" style="width: 300px; height: 400px; filter: drop-shadow(11px 13px 9px #000000); -webkit-filter: drop-shadow(11px 13px 9px #000000); -moz-filter: drop-shadow(11px 13px 9px #000000);"/>
       </div>
       <div class="col-md-4">
       </div>

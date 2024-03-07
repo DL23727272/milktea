@@ -268,7 +268,7 @@ $cartItems = $_SESSION['cart'];
 
     // Call refreshCart function when the page loads
     $(document).ready(function() {
-        // Set custom Alertify options
+        //  custom Alertify options
         alertify.set('notifier', 'position', 'top-right');
         alertify.set('notifier', 'delay', 5);
         alertify.set('notifier', 'position', 'top-right');
