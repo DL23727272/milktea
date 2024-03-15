@@ -89,7 +89,8 @@ $cartItems = $_SESSION['cart'];
     <div class="container-sm">
       <img src="img/Logo.jpg">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <!-- <span class="navbar-toggler-icon"></span> -->
+        <i class="fa-solid fa-mug-hot"></i>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav">
@@ -102,7 +103,7 @@ $cartItems = $_SESSION['cart'];
   </nav>
 
   <!--Main Content-->
-  
+
   <!--Cart Content Container-->
   <div id="cartContentContainer" class="container my-5">
       <h2>Your Shopping Cart</h2>
